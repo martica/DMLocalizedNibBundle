@@ -155,7 +155,7 @@
             } else if ([view isKindOfClass:[NSSegmentedControl class]]) {
                 NSSegmentedControl *segmentedControl = (NSSegmentedControl *)control;
                 
-                NSUInteger segmentIndex, segmentCount = [segmentedControl segmentCount];
+                NSInteger segmentIndex, segmentCount = [segmentedControl segmentCount];
                 for (segmentIndex = 0; segmentIndex < segmentCount; segmentIndex++) {
                     NSString *localizedSegmentLabel = [self _localizedStringForString:[segmentedControl labelForSegment:segmentIndex] table:table];
                     if (localizedSegmentLabel)
