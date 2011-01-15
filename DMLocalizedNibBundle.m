@@ -152,6 +152,13 @@
                         [matrix setToolTip:localizedCellToolTip forCell:cell];
                 }
                 
+            } else if ([view isKindOfClass:[NSTableView class]]) {
+				NSTableView *tableView = (NSTableView *)control;
+				
+				NSArray *columns = [tableView tableColumns];
+				for (NSTableColumn *column in columns) {					
+					[self _localizeStringsInObject:[column headerCell] table:table];
+				}
             } else if ([view isKindOfClass:[NSSegmentedControl class]]) {
                 NSSegmentedControl *segmentedControl = (NSSegmentedControl *)control;
                 
@@ -177,7 +184,7 @@
         
         [self _localizeStringsInObject:[window contentView] table:table];
         
-    }
+    } 
 }
 
 + (NSString *)_localizedStringForString:(NSString *)string table:(NSString *)table;
