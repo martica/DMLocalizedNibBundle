@@ -42,7 +42,7 @@
 
 + (BOOL)deliciousLocalizingLoadNibFile:(NSString *)fileName externalNameTable:(NSDictionary *)context withZone:(NSZone *)zone;
 {
-    NSString *localizedStringsTableName = [[fileName lastPathComponent] stringByDeletingPathExtension];
+    NSString *localizedStringsTableName = @"CCLocalized"; //[[fileName lastPathComponent] stringByDeletingPathExtension];
     NSString *localizedStringsTablePath = [[NSBundle mainBundle] pathForResource:localizedStringsTableName ofType:@"strings"];
     if (localizedStringsTablePath && ![[[localizedStringsTablePath stringByDeletingLastPathComponent] lastPathComponent] isEqualToString:@"English.lproj"]) {
         
