@@ -11,9 +11,8 @@
 
 @interface NSBundle (DMLocalizedNibBundle)
 + (BOOL)deliciousLocalizingLoadNibFile:(NSString *)fileName externalNameTable:(NSDictionary *)context withZone:(NSZone *)zone;
-@end
 
-@interface NSBundle ()
+// Private methods
 + (void)_localizeStringsInObject:(id)object table:(NSString *)table;
 + (NSString *)_localizedStringForString:(NSString *)string table:(NSString *)table;
 // localize particular attributes in objects
